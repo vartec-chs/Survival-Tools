@@ -1,5 +1,5 @@
 import { ChatSendAfterEvent } from "@minecraft/server";
-import { transLevelUiSend } from "../commands/transfer-level.js";
+import transLevelCommand from "../commands/transfer-level.command.js";
 import commandList from "../command.list.js";
 import helpCommand from "../commands/help.command.js";
 
@@ -11,7 +11,7 @@ export default function chatEventSubscribe(event: ChatSendAfterEvent){
         const commandsList = commandList();
 
         if (commandsList[0].alises.includes(text)){
-            transLevelUiSend(event.sender);
+            transLevelCommand(event.sender);
         }
         else if (commandsList[1].alises.includes(text)){
             helpCommand(event.sender);

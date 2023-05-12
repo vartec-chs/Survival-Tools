@@ -1,6 +1,3 @@
-import { Player } from "mojang-minecraft";
-import { transLevelUiSend } from "./commands/transfer-level.js";
-
 interface ICommand {
     id: number
     name: string
