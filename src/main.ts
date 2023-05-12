@@ -1,17 +1,12 @@
-import {world, ChatSendAfterEvent} from "@minecraft/server";
-// import * as ui from "@minecraft/server-ui";
-import {transLevelUiSend} from './commands/transfer-level.js'
-
-var commandList: Array<string> = ["tlevel"];
+import {world, ChatSendAfterEvent, PlayerJoinAfterEvent} from "@minecraft/server";
+import chatEventSubscribe from "./events/chat.event.js";
 
 
-world.afterEvents.chatSend.subscribe( (arg: ChatSendAfterEvent) => {
-    if (arg.message.startsWith("$")){
-        const text = arg.message.slice(1, 15); 
-
-        if (text === commandList[0]){
-            transLevelUiSend(arg.sender)
-        }
-
-    };
+world.afterEvents.chatSend.subscribe( (event: ChatSendAfterEvent) => {
+    chatEventSubscribe(event);
 });
+
+world.afterEvents.playerJoin.subscribe( (event: PlayerJoinAfterEvent) => {
+    const playerName = event.playerName;
+    
+} )
