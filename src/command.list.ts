@@ -13,15 +13,15 @@ export default function commandList(): Array<ICommand> {
     const commandsList: Array<ICommand> = [
         {
             id: 1,
-            name: 'test',
-            alises: ["test"],
-            description: ""
+            name: 'tlevel',
+            alises: ["tl"],
+            description: "перечисление опыта другим игрокам"
         },
         {
             id: 2,
-            name: 'test',
-            alises: ["test"],
-            description: ""
+            name: 'help',
+            alises: ["h"],
+            description: "команда помощи"
         }
     ] 
     return commandsList
